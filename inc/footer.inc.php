@@ -1,4 +1,4 @@
-<footer>
+<footer class="bg-primary text-white">
     <div class="bg-violet">
         <p>
         <?php 
