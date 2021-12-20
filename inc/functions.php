@@ -20,7 +20,24 @@ function dateFR() {
     echo utf8_encode( strftime('%A, %d, %B, %Y'));
 }
 
+
 // déclaration d'une constante qui contient une url ATTENTION on le déplacera plus tard VOIR
+
+// création d'une fonction pour print_r
+
+function jeprint_r($mavariable){
+    echo "<pre>";
+    print_r($mavariable);
+    echo "</pre>";
+}
+
+function debug($mavar){
+    echo "<br> <small class=\"bg-warning text-white\">....var_dump</small><pre class=\"alert alert-danger w-50\">";
+    var_dump($mavar);
+    echo "</pre>";
+}
+
+
 
 
 ?>
