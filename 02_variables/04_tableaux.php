@@ -19,7 +19,7 @@ require_once '../inc/functions.php';
     <!-- =================================== -->
 
     <header class="container-fluid">
-        <div class="col-12 text-center">
+    <div class="col-12 text-center">
             <h1 class="display-4">Cours PHP - Chapitre 04 - Tableaux</h1>
             <p class="lead"><i class="bi bi-caret-right-fill">Les tableaux représentent un type composé car ils permettent de stocker sous un même nom de variable plusieurs valeurs indépendantes. C'est comme un tiroir divisé en compartiments. Chaque compartiment, que nous nommerons un élément du tableau, est repéré par un indince numérique (le premier ayant par défaut la valeur 0 et non 1).D'où l'expression de "tableau indicé".Les tableaux représentent un type composé car ils permettent de stocker sous un même nom de variable plusieurs valeurs indépendantes. C'est comme un tiroir divisé en compartiments. Chaque compartiment, que nous nommerons un élément du tableau, est repéré par un indince numérique (le premier ayant par défaut la valeur 0 et non 1).D'où l'expression de "tableau indicé".</i></p>
     
@@ -67,10 +67,10 @@ $couleurs = array(
 
 debug($couleurs);
 
-echo "<p>La première couleur du tableau associatif est  le $couleurs[b]</p>";// si l'echo est entre guillemets doubles il n'est pas utile de noter l'indice associatif (ici b) entre simple quote >>> Indispensable avec des requêtes  SQL
+// echo "<p>La première couleur du tableau associatif est  le $couleurs[b]</p>";// si l'echo est entre guillemets doubles il n'est pas utile de noter l'indice associatif (ici b) entre simple quote >>> Indispensable avec des requêtes  SQL
 
-echo count($couleurs);
-echo sizeof($couleurs);
+// echo count($couleurs);
+// echo sizeof($couleurs);
 
 echo "<p>Le nombre de valeurs est de : avec count ()" .count($couleurs)."</p>";
 echo "<p>Le nombre de valeurs est de : avec sizeof ()" .sizeof($couleurs)."</p>";
@@ -126,6 +126,21 @@ $contacts = array(
 <!-- fin col -->
 </section>
 <!-- fin row -->
+<section class="row">
+<div class="col-md-6">
+<h2 class="text-decoration-underline text-danger">4-Tableaux multidimensionnels</h2>
+<?php 
+;
+?>
+
+
+</div>
+<!-- fin col -->
+<div class="col-md-6">
+<h2 class="text-decoration-underline text-danger">Titredeniveau2</h2>
+</div>
+</section>
+
     </div>
     <!-- fin div container -->
 
