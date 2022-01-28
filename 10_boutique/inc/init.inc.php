@@ -1,5 +1,7 @@
 <?php
 
+require_once 'functions.inc.php';
+
 // connexion la session start une constante
 // une variable pour les messages du site l'appel des fonctions
 
@@ -17,16 +19,18 @@ array(
   PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8',// pour définir le charset des échanges avec la BDD
 ));
 
-debug(get_class_methods($pdoMAB));
+
 
 //2- OUVERTURE DE SESSION
 
 //3- CHEMIN DU SITE DANS UNE CONSTANTE
+session_start();
 
 //4- UNE VARIABLE POUR LES MESSAGES
+$contenu = '';
 
 //5- INCLUSION DES FONCTIONS
-require_once 'fonction.php';
+
 // debug($pdoMAB);
 // debug(get_class_methods($pdoMAB));
 

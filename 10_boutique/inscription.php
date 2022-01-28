@@ -94,9 +94,7 @@ if ( !empty($_POST) ) {
 <!-- =================================== -->
 <nav class="navbar sticky-top navbar-light bg-light">
 <div class="container-fluid">
-    <a class="navbar-brand" href="test.php">
-      <img src="photos/logo.jpg" alt="logo2" width="30" height="24">
-    </a>
+
     <ul class="nav justify-content-center">
 
   <li class="nav-item">
