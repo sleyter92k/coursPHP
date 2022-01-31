@@ -22,9 +22,11 @@ array(
 
 
 //2- OUVERTURE DE SESSION
-
-//3- CHEMIN DU SITE DANS UNE CONSTANTE
 session_start();
+//3- CHEMIN DU SITE DANS UNE CONSTANTE
+//ici on définit le chemin absolu dans une constante, on ecrira tous les chemins src et href avec cette constante
+// chez l'hébergeur on écrira ce qui suis 
+define('RACINE_SITE', '/CoursPHP/10_boutique/');
 
 //4- UNE VARIABLE POUR LES MESSAGES
 $contenu = '';

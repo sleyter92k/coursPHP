@@ -2,12 +2,22 @@
 
 require_once 'inc/init.inc.php';
 debug($_SESSION);
-debug(estConnecte());
-debug(estAdmin());
+if(estAdmin()) {
+    echo '<p>Vous êtes administrateur</p>';
+    echo '<a class="btn btn-primary" href="admin/accueil.php">Espace admin</a>'; 
+    echo '<a class="btn btn-primary" href="accueil.php">Aller a la boutique</a>';
+} else {
+    echo '<p>Vous êtes connecté rendez-vous à la Boutique</p>';
+    echo '<a class="btn btn-success" href="accueil.php">Retour à la boutique</a>';
+}
+if (estconnecte()){
+    
+}
 
 if (!estConnecte()) {
     header('location:connexion.php');
 }
+
 
 ?>
 
@@ -33,9 +43,12 @@ if (!estConnecte()) {
         echo '<p>Vous êtes administrateur</p>';
     } else {
         echo '<p>Vous êtes connecté, rendez-vous à la boutique</p>';
-        echo '<a class="btn btn-info" href="Accueil.php">Retour à la boutique</a>';
+        echo '<a class="btn btn-info" href=" '.RACINE_SITE.' accueil.php">Retour à la boutique</a>';
     }
     if (estConnecte()) {
+
+        // echo 'coucou';
+        echo '<a class="btn btn-secondary" href="' .RACINE_SITE. 'connexion.php?action=deconnexion">Se Déconnecter</a>';
 
     }
     ?>

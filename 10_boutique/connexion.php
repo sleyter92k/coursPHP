@@ -3,7 +3,22 @@ require_once 'inc/init.inc.php';
 
 //2 deconnexion
 
+require_once 'inc/init.inc.php';
+// debug($_GET);
+
+$message = '';
+if (isset($_GET['action']) && $_GET['action'] == 'deconnexion') { // si il existe action qui contient 'deconnexion' dans l'url
+    unset($_SESSION['membre']); // on supprime le membre de la session (le contenu du tableau indice membre)
+    $message = '<div class="alert alert-success">Vous êtes Déconnecté</div>';// message de déconnexion cf echo plus bas
+    debug($_SESSION);
+}
+
 //3 redirection vers la page profil
+
+if (estConnecte()) {
+  header('location:profil.php');
+  exit();
+}
 
 //1 traitement du formulaire de connexion
 
@@ -116,7 +131,12 @@ if(!empty($_POST)) {
 
 
 
-    <form action="" method="POST">
+    <form action="" method="POST"> 
+    <?php
+    echo $contenu;
+    echo $message;
+
+    ?>
   <div class="mb-3">
     <label for="pseudo"  class="form-label" >Pseudo</label>
     <input type="text" class="form-control" name="pseudo" id="pseudo">
