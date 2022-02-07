@@ -255,6 +255,7 @@ if ($requete) {
     <table class="table table-striped">
       <thead>
         <tr>
+        <th class="text text-danger">Photo</th>
           <th class="text text-danger">Titre</th>
           <th class="text text-danger">Categorie</th>
           <th class="text text-danger">Taille</th>
@@ -268,6 +269,7 @@ if ($requete) {
         <!-- ouverture de la boucle while -->
         <?php while ($ligne = $requete->fetch(PDO::FETCH_ASSOC)) { ?>
           <tr>
+            <td><img src="../<?php echo $ligne['photo']; ?>" alt=""></td>
             <td><?php echo $ligne['titre']; ?></td>
             <td><?php echo $ligne['categorie'] . ' ' . $ligne['stock']; ?></td>
             <td><?php echo $ligne['taille']; ?></td>
