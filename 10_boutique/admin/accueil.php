@@ -2,6 +2,7 @@
 
 // require connextion session
 require_once '../inc/init.inc.php';
+require_once '../inc/functions.php';
 // debug($_SESSION);
 // debug(estConnecte());
 // debug(estAdmin());
@@ -245,7 +246,7 @@ if ($requete) {
     </section>
 
     <?php
-    $requete = $pdoMAB->query(" SELECT * FROM produits ORDER BY id_produit");
+    $requete = $pdoMAB->query("SELECT * FROM produits, categories WHERE produits.id_categorie = categories.id_categorie;");
     // debug($resultat);
     $pdt = $requete->rowCount();
     // debug($nbr_commentaires);
@@ -271,7 +272,7 @@ if ($requete) {
           <tr>
             <td><img src="../<?php echo $ligne['photo']; ?>" alt=""></td>
             <td><?php echo $ligne['titre']; ?></td>
-            <td><?php echo $ligne['categorie'] . ' ' . $ligne['stock']; ?></td>
+            <td><?php echo $ligne['categorie'] . ' ** ' . $ligne['stock']; ?></td>
             <td><?php echo $ligne['taille']; ?></td>
             <td><?php echo $ligne['description']; ?></td>
             <td><?php echo $ligne['couleur']; ?></td>
@@ -296,7 +297,13 @@ if ($requete) {
   <input type="text" name="reference" id="reference" class="form-control">
 
   <label for="categorie" class="form-label">Catégorie</label>
-  <input type="text" name="categorie" id="categorie" class="form-control">
+  <select name="categorie" id="categorie" class="form-select">
+      <?php
+        foreach ( $pdoMAB->query ( " SELECT * FROM categories ORDER BY categorie ASC " ) as $ligne_categorie) {
+          echo '<option value="' .$ligne_categorie['id_categorie'].'">' .$ligne_categorie['categorie']. '</option>';
+        }
+      ?>
+  </select>
 
   <label for="titre" class="form-label">Titre *</label>
   <input type="text" name="titre" id="titre" class="form-control">

@@ -1,5 +1,6 @@
 <?php
   require_once 'inc/init.inc.php';
+  require_once 'inc/functionS.php';
  // debug($pdoMAB);
 ?>
 
@@ -109,7 +110,7 @@
 
     <?php
 
-  $articles = $pdoMAB->query ( "SELECT * FROM produits ORDER BY id_produit DESC");
+  $articles = $pdoMAB->query ( "SELECT * FROM produits, categories WHERE produits.id_categorie = categories.id_categorie; ");
 
   while($shop = $articles->fetch(PDO::FETCH_ASSOC)) {
     echo "<div class=\"col\">";

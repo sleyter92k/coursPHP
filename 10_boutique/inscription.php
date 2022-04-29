@@ -6,7 +6,7 @@ require_once 'inc/init.inc.php';
 // debug(strlen(' ma grand mère fait du vélo plus vite que moi '));
 
 if ( !empty($_POST) ) {
-  debug($_POST);
+
 
   if ( !isset($_POST['civilite']) || $_POST['civilite'] != 'm' && $_POST['civilite'] != 'f' ) { // && ET
       $contenu .='<div class="alert alert-danger">La civilité n\'est pas valable !</div>';
